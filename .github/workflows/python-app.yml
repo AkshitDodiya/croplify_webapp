@@ -28,4 +28,9 @@ jobs:
     - name: Test with unittest
       run: |
         python test.py
-        pm2 list
+
+    - name: pm2 start, restart nginx service
+      run: |
+        pm2 stop all || : && pm2 start app.py
+        pm2 save
+        sudo service nginx restart 
