@@ -28,3 +28,4 @@ jobs:
     - name: Test with unittest
       run: |
         python test.py
+        pm2 list
